@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heart Disease Detector</title>
+    <!-- Boostrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container justify-content-center">
+      <div class="mb-5 row  mt-5">
+        <div class="container-fluid mb-4" >
+          <div class="row ">
+            <h1 class="text-2xl text-center">Heart Prediction</h1>
+          </div>
+        </div>
+        
+      <div class="row justify-content-center">
+        <form method="post" class="bg-dark col-5 rounded-3 text-white" >
+          <div class="mb-3 mt-4" >
+            <label for="Age" class="form-label">Age</label>
+            <input class="form-control" type="number" name="Age" id="age" step="1" min="0">
+          </div>
+    
+          <div class="mb-3">
+            <label for="Sex" class="form-label">Sex</label>
+            <select  class="form-control" name="Sex" id="gender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="RestingBP" class="form-label">Resting BP</label>
+            <input  class="form-control" type="number" name="RestingBP" id="resting_bp" step="1"
+              min="0">
+          </div>
+    
+          <div class="mb-3 ">
+            <label for="Cholesterol" class="form-label">Cholesterol</label>
+            <input class="form-control" type="number" name="Cholesterol" id="cholesterol"
+              step="1" min="0">
+          </div>
+    
+          <div class="mb-3 ">
+            <label for="ChestPainType" class="form-label">Chest Pain Type</label>
+            <select class="form-control"  name="ChestPainType" id="chest_pain_type">
+              <option value="ATA">ATA</option>
+              <option value="NAP">NAP</option>
+              <option value="ASY">ASY</option>
+              <option value="TA">TA</option>
+            </select>
+          </div>
+    
+          <div class="mb-3 ">
+            <label for="RestingECG" class="form-label">Resting ECG</label>
+            <select class="form-control"  name="RestingECG" id="resting_ecg">
+              <option value="Normal">Normal</option>
+              <option value="ST">ST</option>
+              <option value="LVH">LVH</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="FastingBS" class="form-label">Fasting BS</label>
+            <select class="form-control"  name="FastingBS" id="fasting_bs">
+              <option value="1">True</option>
+              <option value="0">False</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="ExerciseAngina"class="form-label">Exercise Angina</label>
+            <select class="form-control"  name="ExerciseAngina" id="ExerciseAngina">
+              <option value="Y">Yes</option>
+              <option value="N">No</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="ST_Slope" class="form-label">ST Slope</label>
+            <select class="form-control"  name="ST_Slope" id="st_slope">
+              <option value="Up">Up</option>
+              <option value="Flat">Flat</option>
+              <option value="Down">Down</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="Oldpeak" class="form-label">Old peak</label>
+            <input class="form-control"  type="number" name="Oldpeak" id="oldpeak" step="0.01">
+          </div>
+    
+          <div class="mb-3">
+            <label for="MaxHR" class="form-label">Max Heart Rate</label>
+            <input class="form-control"  type="number" name="MaxHR" id="max_hr" step="1" min="0">
+          </div>
+    
+          <div class=" mb-3  flex justify-align-center mx-auto" col-3>
+            <button type="submit" class="justify-align-center btn btn-outline-primary ">
+              Submit and Predict
+            </button>
+          </div>
+            
+        </form>
+      </div>
+     
+    {% if str_prediction %}
+    <h3 class="text-xl text-center w-full mt-4 mx-auto">
+      {{ str_prediction }}    
+    </h3>
+    {% endif %}
+        
+      </div>
+    </div>
+  </body>
+</html>
